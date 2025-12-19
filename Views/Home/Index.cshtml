@@ -1,8 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-}
+} 
+
+@model Proyecto.Models.num;
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <!-- Form que apunta a la accion del controlador que se encarga de sumar 1 al pulsar el boton -->
+    <!-- Con metodo Post para que no se muestre la informacion en el link-->
+    <form asp-action="SumarUno" asp-controller="Home" method="post">
+        
+        <p>Clicker: @num.numero</p>
+
+        <!-- Submit envía los cambios del form -->
+        <button type="submit">Incrementar</button>
+    </form>
 </div>
